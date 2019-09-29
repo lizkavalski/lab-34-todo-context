@@ -3,12 +3,12 @@ import cookie from "react-cookies";
 import jwt from "jsonwebtoken";
 //import { URLSearchParams } from "url";
 
-const API = process.env.REACT_APP_API;
+const API = process.env.REACT_APP_API_LIVE;
 
 const testLogins = {
-  testAdmin: process.env.REACT_APP_ADMIN_TOKEN || '',
-  testEditor: process.env.REACT_APP_EDITOR_TOKEN || '',
-  testUser: process.env.REACT_APP_USER_TOKEN || '',
+  Admin: process.env.REACT_APP_ADMIN_TOKEN || "",
+  Editor: process.env.REACT_APP_EDITOR_TOKEN || "",
+  User: process.env.REACT_APP_USER_TOKEN || ""
 };
 
 export const LoginContext = React.createContext();
@@ -27,9 +27,10 @@ class LoginProvider extends React.Component {
   login = (username, password) => {
     // This is foul and unsafe ... but when working offline / testmode ess oh kay
     if (testLogins[username]) {
+      console.log("in the if", testLogins);
       this.validateToken(testLogins[username]);
-      console.log(this.validateToken, "token at 31");
     } else {
+      console.log(username, "in the else");
       fetch(`${API}/signin`, {
         method: "post",
         mode: "cors",
@@ -38,6 +39,7 @@ class LoginProvider extends React.Component {
           Authorization: `Basic ${btoa(`${username}:${password}`)}`
         })
       })
+        //console.log('outside the else', username)
         .then(response => response.text())
         .then(token => this.validateToken(token))
         .catch(console.error);
@@ -45,13 +47,14 @@ class LoginProvider extends React.Component {
   };
 
   validateToken = token => {
+    console.log("this the token on line 49", token);
     try {
       let user = jwt.verify(token, process.env.REACT_APP_SECRET);
       console.log("all good");
       this.setLoginState(true, token, user);
     } catch (e) {
       this.setLoginState(false, null, {});
-      console.log("Token Validation Error", e);
+      console.log("The token is having issuse", e);
     }
   };
 

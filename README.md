@@ -5,47 +5,36 @@
 ### Author: Liz Kavalski
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [submission PR](http://xyz.com))
+* [back-end](https://api-js401.herokuapp.com) (class-server)
+* [front-end](https://codesandbox.io/s/class-34-starter-code-todo-q1sxu)
 
-#### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
 
 ### Modules
 #### `todo.js`
+Shows the to-do list based on the user
 #### `index.js`
+Has the components that allows conditional of 'If', 'Then','Else', and 'When'
 #### `counter.js`
+Counts how many items are in the to-do list
 #### `login.js`
+Allow users to login
 #### `context.js`
+Vaildate the tokens and set a cookie that allow the user to stay sign-in
 #### `auth.js`
-##### Exported Values and Methods
+Based on the the capabilities the user has reader those capabilties
 
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* REACT_APP_API_LIVE= a link to the auth server
+* REACT_APP_SECRET= made-up word
+
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
-  
+Put a user name and password into the login form. the usernames and password are: user:USER, editor:EDITOR and admin:ADMIN
 #### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+no test
 
 #### UML
-Link to an image of the UML for your application and response to events
+![UML](UML-lab-34.jpg)
