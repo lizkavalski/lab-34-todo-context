@@ -5,7 +5,7 @@
 ### Author: Liz Kavalski
 
 ### Links and Resources
-* [submission PR](http://xyz.com))
+* [submission PR](https://github.com/lizkavalski/lab-34-todo-context/tree/master/)
 * [back-end](https://api-js401.herokuapp.com) (class-server)
 * [front-end](https://codesandbox.io/s/class-34-starter-code-todo-q1sxu)
 
